@@ -1,0 +1,21 @@
+﻿@page
+@model TestModel
+@{
+    ViewData[ "Title" ] = "Test";
+}
+<h2>@ViewData[ "Title" ]</h2>
+
+<div class="panel">
+    <form class="panel-body" method="get">
+        <div class="form-group">
+            <label asp-for="Input.Text"></label>
+            <input class="form-control" type="text" asp-for="Input.Text" name="text" />
+        </div>
+        <div class="form-check">
+            <label asp-for="Input.CheckBox"><input type="checkbox" asp-for="Input.CheckBox" name="check" /> @Html.LabelFor(m => m.Input.CheckBox)</label>            
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<p>Your input: @Model.Input.Text / @Model.Input.CheckBox .</p>
